@@ -12,7 +12,11 @@ export async function getHabits() {
 }
 
 export async function createHabit(habitData) {
-  const response = await axios.post(API_URL, habitData);
+  const response = await axios.post(
+    API_URL,
+    habitData
+  );
+
   return response.data;
 }
 
@@ -30,7 +34,7 @@ export async function completeHabit(habitId) {
     .split("T")[0];
 
   const response = await axios.post(
-    "`${API_BASE}/api/habit-logs`",
+    `${API_BASE}/api/habit-logs`,
     {
       habitId,
       date: today,
@@ -52,9 +56,11 @@ export async function updateHabit(
   return response.data;
 }
 
-export async function getHabitStreak(habitId) {
+export async function getHabitStreak(
+  habitId
+) {
   const response = await axios.get(
-    ``${API_BASE}/api/habit-logs/streak/${habitId}``
+    `${API_BASE}/api/habit-logs/streak/${habitId}`
   );
 
   return response.data;
