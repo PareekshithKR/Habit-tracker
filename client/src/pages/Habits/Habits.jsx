@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getHabits } from "../../services/habitservices";
+import { getHabits } from "../../services/habitServices";
 
 export default function Habits() {
   const [habits, setHabits] = useState([]);

@@ -7,7 +7,7 @@ import {
   completeHabit,
   updateHabit,
   getHabitStreak,
-} from "../../services/habitservices";
+} from "../../services/habitServices";
 import EditHabitModal from "../../components/EditHabitModal";
 
 export default function Dashboard() {
