@@ -1,6 +1,10 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/habits";
+const API_BASE =
+  import.meta.env.VITE_API_URL;
+
+const API_URL =
+  `${API_BASE}/api/habits`;
 
 export async function getHabits() {
   const response = await axios.get(API_URL);
@@ -26,7 +30,7 @@ export async function completeHabit(habitId) {
     .split("T")[0];
 
   const response = await axios.post(
-    "http://localhost:5000/api/habit-logs",
+    "`${API_BASE}/api/habit-logs`",
     {
       habitId,
       date: today,
@@ -50,7 +54,7 @@ export async function updateHabit(
 
 export async function getHabitStreak(habitId) {
   const response = await axios.get(
-    `http://localhost:5000/api/habit-logs/streak/${habitId}`
+    ``${API_BASE}/api/habit-logs/streak/${habitId}``
   );
 
   return response.data;
